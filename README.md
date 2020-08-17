@@ -10,13 +10,15 @@ MongoDB is optional but is recommended.
 
     sudo apt-get install mongodb
 
-## Run the tutorials:
+## Run the tutorials
+
+    git clone git@github.com:platonai/pulsar-tutorials.git
 
     mvn exec:java -pl basic -Dexec.mainClass=ai.platon.pulsar.tutorials.ManualKt
 
     mvn exec:java -pl sql -Dexec.mainClass=ai.platon.pulsar.tutorials.SqlManualKt
 
-## Overview:
+## Overview
 
 Scrape out pages from a portal url using native api:
 
