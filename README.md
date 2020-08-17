@@ -1,8 +1,11 @@
 # pulsar-tutorials
 
 ## Install dependency
+
 Ubuntu is the primary OS environment. 
+
 Google chrome must be installed. 
+
 MongoDB is optional but is recommended. 
 
     sudo apt-get install mongodb
