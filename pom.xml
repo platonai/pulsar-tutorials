@@ -39,6 +39,7 @@
     </repositories>
 
     <build>
+        <defaultGoal>compiler</defaultGoal>
 
         <pluginManagement>
             <plugins>

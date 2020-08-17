@@ -2,8 +2,6 @@ package ai.platon.pulsar.tutorials
 
 import ai.platon.pulsar.context.PulsarContext
 import ai.platon.pulsar.context.withContext
-import ai.platon.pulsar.dom.select.firstText
-import ai.platon.pulsar.dom.select.firstTextOrNull
 
 class Manual(context: PulsarContext) {
     val session = context.createSession()
