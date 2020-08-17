@@ -13,6 +13,8 @@ MongoDB is optional but is recommended.
 ## Run the tutorials
 
     git clone https://github.com/platonai/pulsar-tutorials.git
+    
+    cd pulsar-tutorials
 
     mvn exec:java -pl basic -Dexec.mainClass=ai.platon.pulsar.tutorials.ManualKt
 
