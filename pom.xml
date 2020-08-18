@@ -88,6 +88,7 @@
 
     <properties>
         <pulsar-version>1.5.7-SNAPSHOT</pulsar-version>
+        <pulsar-h2.version>1.4.196-SNAPSHOT</pulsar-h2.version>
         <kotlin.version>1.3.70</kotlin.version>
     </properties>
 </project>
