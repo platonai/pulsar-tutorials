@@ -39,7 +39,7 @@
     </repositories>
 
     <build>
-        <defaultGoal>compiler</defaultGoal>
+        <defaultGoal>compile</defaultGoal>
 
         <pluginManagement>
             <plugins>

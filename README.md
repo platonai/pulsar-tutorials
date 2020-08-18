@@ -4,17 +4,21 @@
 
 Ubuntu is the primary OS environment. 
 
-Google chrome must be installed. 
+Google chrome must be installed.
 
 MongoDB is optional but is recommended. 
 
-    sudo apt-get install mongodb
+    sudo apt install mongodb
 
-## Run the tutorials
+## Build the tutorials
 
     git clone https://github.com/platonai/pulsar-tutorials.git
     
     cd pulsar-tutorials
+
+    mvn clean && mvn
+
+## Run the examples
 
     mvn exec:java -pl basic -Dexec.mainClass=ai.platon.pulsar.tutorials.ManualKt
 
