@@ -38,6 +38,12 @@
             <groupId>ai.platon.pulsar</groupId>
             <artifactId>pulsar-ql-server</artifactId>
             <version>${pulsar-version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ai.platon.pulsar</groupId>
+                    <artifactId>pulsar-h2</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 </project>
