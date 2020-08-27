@@ -88,14 +88,14 @@ open class Crawler(
         log.info("Portal page is exported to: file://$path")
 
         val links = document.select(options.outlinkSelector) { it.attr("abs:href") }
-                .mapTo(mutableSetOf()) { i.normalize(it) }
-                .take(options.topLinks).map { it.url }
+                .mapNotNullTo(mutableSetOf()) { i.normalizeOrNull(it)?.spec }
+                .take(options.topLinks)
         log.info("Total " + links.size + " items to load")
 
         i.sessionConfig.putBean(FETCH_BEFORE_FETCH_BATCH_HANDLER, beforeBatchHandler)
         i.sessionConfig.putBean(FETCH_AFTER_FETCH_BATCH_HANDLER, afterBatchHandler)
 
-        val pages = i.loadAll(links, options.createItemOption())
+        val pages = i.loadAll(links, options.createItemOptions())
 
         val query = options.query
         if (query != null) {
@@ -116,7 +116,7 @@ open class Crawler(
 
     fun extractAds() {
         val url = "https://wuhan.baixing.com/xianhualipin/a1100414743.html"
-        val doc = i.loadAsDocument(url)
+        val doc = i.loadDocument(url)
         doc.select("a[href~=mssp.baidu]").map {  }
     }
 

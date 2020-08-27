@@ -25,12 +25,7 @@
     <dependencies>
         <dependency>
             <groupId>ai.platon.pulsar</groupId>
-            <artifactId>pulsar-skeleton</artifactId>
-            <version>${pulsar-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ai.platon.pulsar</groupId>
-            <artifactId>pulsar-beans</artifactId>
+            <artifactId>pulsar-protocol</artifactId>
             <version>${pulsar-version}</version>
         </dependency>
     </dependencies>

@@ -2,11 +2,11 @@
 
 ## Install dependency
 
-Ubuntu is the primary OS environment. 
+Ubuntu is the primary OS environment.
 
 Google chrome must be installed.
 
-MongoDB is optional but is recommended. 
+MongoDB is optional but is recommended.
 
     sudo apt install mongodb
 
@@ -27,6 +27,15 @@ MongoDB is optional but is recommended.
 ## Overview
 
 Scrape out pages from a portal url using native api:
+Add maven dependency:
+
+    <dependency>
+        <groupId>ai.platon.pulsar</groupId>
+        <artifactId>pulsar-protocol</artifactId>
+        <version>1.5.7-SNAPSHOT</version>
+    </dependency>
+
+And then scrape web pages using:
 
     val url = "https://list.jd.com/list.html?cat=652,12345,12349"
 
@@ -37,9 +46,18 @@ Scrape out pages from a portal url using native api:
                 listOf(".sku-name", ".p-price"))
 
 Scrape out pages from a portal url using x-sql:
+Add maven dependency:
 
-        select
-            dom_first_text(dom, '.sku-name') as name,
-            dom_first_text(dom, '.p-price') as price
-        from
-            load_out_pages('$url -i 1d -ii 7d', 'a[href~=item]')
+    <dependency>
+        <groupId>ai.platon.pulsar</groupId>
+        <artifactId>pulsar-ql-server</artifactId>
+        <version>1.5.7-SNAPSHOT</version>
+    </dependency>
+
+And then scrape web pages using:
+
+    select
+        dom_first_text(dom, '.sku-name') as name,
+        dom_first_text(dom, '.p-price') as price
+    from
+        load_out_pages('$url -i 1d -ii 7d', 'a[href~=item]')

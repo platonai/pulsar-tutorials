@@ -24,26 +24,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>ai.platon.tutorials</groupId>
-            <artifactId>basic</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>ai.platon.pulsar</groupId>
-            <artifactId>pulsar-h2</artifactId>
-            <version>${pulsar-h2.version}</version>
-        </dependency>
-        <dependency>
             <groupId>ai.platon.pulsar</groupId>
             <artifactId>pulsar-ql-server</artifactId>
             <version>${pulsar-version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ai.platon.pulsar</groupId>
-                    <artifactId>pulsar-h2</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 </project>

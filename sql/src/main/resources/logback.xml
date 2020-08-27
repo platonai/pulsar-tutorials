@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%.10thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="stdout"/>
+    </root>
+
+    <logger name="ai.platon.pulsar" level="WARN"/>
+    <logger name="ai.platon.pulsar.crawl.component" level="INFO"/>
+
+</configuration>
