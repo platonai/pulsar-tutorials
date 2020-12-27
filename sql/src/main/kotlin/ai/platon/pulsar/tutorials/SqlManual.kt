@@ -3,8 +3,9 @@ package ai.platon.pulsar.tutorials
 import ai.platon.pulsar.common.sql.ResultSetFormatter
 import ai.platon.pulsar.context.withContext
 import ai.platon.pulsar.ql.h2.H2MemoryDb
+import ai.platon.pulsar.tutorials.detail.SqlExtractor
 
-class SqlManual {
+class SqlManual: SqlExtractor() {
     private val conn = H2MemoryDb().getRandomConnection()
     private val statement = conn.createStatement()
     private val url = "https://list.jd.com/list.html?cat=652,12345,12349"
@@ -37,17 +38,6 @@ class SqlManual {
     fun runAll() {
         scrape()
         scrapeOutPages()
-    }
-
-    private fun execute(sql: String) {
-        val regex = "^(SELECT|CALL).+".toRegex()
-        if (sql.toUpperCase().filter { it != '\n' }.trimIndent().matches(regex)) {
-            val rs = statement.executeQuery(sql)
-            println(ResultSetFormatter(rs, withHeader = true))
-        } else {
-            val r = statement.execute(sql)
-            println(r)
-        }
     }
 }
 
