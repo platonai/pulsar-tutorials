@@ -23,6 +23,7 @@
     <modules>
         <module>basic</module>
         <module>sql</module>
+        <module>amazon</module>
     </modules>
 
     <repositories>
