@@ -13,7 +13,7 @@ import java.util.concurrent.ArrayBlockingQueue
 /**
  * The base class for all tests.
  */
-open class SqlExtractor {
+open class SqlExtractor: AutoCloseable {
 
     val connection = H2MemoryDb().getRandomConnection()
     val stat = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)
@@ -65,7 +65,7 @@ open class SqlExtractor {
         return ResultSets.newSimpleResultSet()
     }
 
-    fun close() {
+    override fun close() {
         connectionPool.forEach { it.runCatching { it.close() } }
     }
 }
