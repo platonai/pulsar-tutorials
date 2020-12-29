@@ -12,7 +12,9 @@
 
 require_once "detail/api.php";
 
-$host='42.194.239.233';
+if (!isset($host)) {
+    $host='42.194.239.233';
+}
 $fetchUrl='https://www.amazon.com/dp/B07HF3X6Y4?psc=1';
 
 $sql = file_get_contents(dirname(__FILE__)."/../config/query.sql");
