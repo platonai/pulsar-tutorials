@@ -12,19 +12,20 @@
 
 require_once "detail/api.php";
 
-if (!isset($host)) {
-    $host='42.194.239.233';
-}
+# The url of this scrape task
 $fetchUrl='https://www.amazon.com/dp/B07HF3X6Y4?psc=1';
 
-$sql = file_get_contents(dirname(__FILE__)."/../config/query.sql");
-$sql = str_replace("@url", "'" . $fetchUrl . "'", $sql);
+$host='42.194.241.96';
+$authToken='yoesoo-1-bb880fade2457372cadd84821b3f29d0';
 
-$submitUrl = 'http://'.$host.':8182/api/x/a/q';
+# Load the x-sql for this scrape task
+$sql = loadSql($fetchUrl);
+$submitUrl = "http://$host:8182/api/x/a/q";
+# The uuid of this scrape task
 $uuid = submit($submitUrl, $sql);
-# $url = 'http://localhost:8182/api/x/a/q';
 
-$queryUrl = "http://" . $host . ":8182/api/x/a/status?uuid=$uuid&authToken=gJn6fUBh-1-af1639a924d7232099a037e9544cf43f";
+# Ask the system if the task is finished
+$queryUrl = "http://$host:8182/api/x/a/status?uuid=$uuid&authToken=$authToken";
 $output = query($queryUrl);
 while ($output['statusCode'] != 200) {
     print_r($output);

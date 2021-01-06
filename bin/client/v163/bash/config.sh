@@ -1,6 +1,6 @@
 #!/bin/bash
 
-host=crawl0
+host=42.194.241.96
 
 # The host of the API server
 if [[ "$host" = "" ]]; then
@@ -8,7 +8,7 @@ if [[ "$host" = "" ]]; then
 fi
 
 # Ask the administrator for your username and authToken
-export authToken=gJn6fUBh-1-af1639a924d7232099a037e9544cf43f
+export authToken=yoesoo-1-bb880fade2457372cadd84821b3f29d0
 
 # Important!
 # Change to your own callback url, we will post the result of x-sql to this url

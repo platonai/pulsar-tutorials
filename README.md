@@ -13,7 +13,7 @@ MongoDB is optional but is recommended.
 ## Build the tutorials
 
     git clone https://github.com/platonai/pulsar-tutorials.git
-    
+
     cd pulsar-tutorials
 
     mvn clean && mvn
@@ -77,3 +77,4 @@ Note we should use a snapshots repository currently, add the following to your p
             </snapshots>
         </repository>
     </repositories>
+    

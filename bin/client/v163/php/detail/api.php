@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * Load the X-SQL from file and inject the fetch url
+ *
+ * @param $fetchUrl string The url to fetch
+ * @return string The x-sql with the fetch url injected
+ */
+function loadSql($fetchUrl) {
+    $sql = file_get_contents(dirname(__FILE__)."/../../config/query.sql");
+    $sql = str_replace("@url", "'" . $fetchUrl . "'", $sql);
+    return $sql;
+}
+
+/**
  *The x-sql api is an async api, every call returns the id of the execution immediately.
  *
  * * you can poll the result using this id
